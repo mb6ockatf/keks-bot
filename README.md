@@ -66,3 +66,12 @@ Currently, only English and Russian are supported.
 For instance, `/lang ru` or `/lang en`
 
 `@mb6ockatf, 19.04.2023`
+
+## License
+
+Copyright (C) 2023-2025 mb6ockatf
+
+keks-bot is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.  See COPYING.
