@@ -1,0 +1,100 @@
+KEKS -- an ERP system for a school canteen
+==========================================
+
+KEKS is an ERP system for a school canteen.  It is a Telegram bot
+written in Python with the aiogram library, keeping its data in
+PostgreSQL.
+
+A Russian version of this file is in README.ru.
+
+Requirements
+------------
+
+Python 3 with the packages in requirements.txt, and a PostgreSQL
+server.
+
+Using it
+--------
+
+ 1. Clone this repository.
+
+ 2. Go to the project's directory.
+
+ 3. Set up your PostgreSQL server and fill in all the needed
+    information in config.ini.
+
+ 4. Add your bot token and your own Telegram user id to the "bot"
+    section of config.ini.  It is required for free access to all bot
+    commands.
+
+    You also need to pass the bot token as a run parameter in test.sh.
+    The bot.token value in config.ini will be deprecated soon, so it is
+    not really required.
+
+ 5. Create a virtual environment.  For instance,
+
+        python3 -m venv venv
+        . venv/bin/activate
+
+ 6. Install all the dependencies with
+
+        python3 -m pip install -r requirements.txt
+
+ 7. Launch the bot with ./test.sh.
+
+User guide
+----------
+
+Change the language with /lang LANGUAGE-ABBREVIATION.  Currently, only
+English and Russian are supported.  For instance, "/lang ru" or
+"/lang en".
+
+User's role
+-----------
+
+Begin communication with the /start command.  You will be asked
+for a username, so simply send /username YOUR-USERNAME.  It will be
+seen by the cashier when you receive your order.
+
+You can place a new order with /order DISHNAME QUANTITY.  Check
+/menu for the available dishes before actually placing the order,
+otherwise an error will be shown.
+
+Cashier's role
+--------------
+
+You have to do the /start procedure and simply follow the user's
+guide first.  Then, you need your administrator to assign you a
+role.
+
+After doing this, information about new orders will be sent to you.
+Run /confirm ACCOUNT-NAME to close the order.  The account's name
+can be found right in the order message.  Closing the order
+decreases the number of available dishes in /menu.
+
+Cook's role
+-----------
+
+You have to do the /start procedure and simply follow the user's
+guide first.  Then, you need your administrator to assign you a
+role.
+
+You can add new dishes with /addish NAME PRICE QUANTITY (they will
+show up in /menu, and consumers can find them there).
+
+@mb6ockatf, 19.04.2023
+
+Reporting bugs
+--------------
+
+Report bugs at https://github.com/mb6ockatf/keks-bot/issues.
+
+Copying
+-------
+
+Copyright (C) 2023-2025 mb6ockatf
+
+keks-bot is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.  See COPYING.
