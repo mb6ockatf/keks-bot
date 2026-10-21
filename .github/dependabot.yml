@@ -1,0 +1,25 @@
+# dependabot.yml - keep the Python packages and the actions up to date.
+#
+# Copyright (C) 2026 mb6ockatf
+# This file is free software; see COPYING for copying conditions.
+
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: chore
+      include: scope
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns: ['*']
+    commit-message:
+      prefix: ci
